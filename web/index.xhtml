@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+        <h:outputStylesheet name="css/jsfcrud.css"/>
+    </h:head>
+    <h:body>
+        <center>
+         <h:form>
+      <h3><h:outputText value="#{msg['etiqueta']}" /></h3>
+      <h:panelGrid columns="2"> 
+         Language : 
+         <h:selectOneMenu value="#{userData.locale}" onchange="submit()"
+            valueChangeListener="#{userData.localeChanged}">
+            <f:selectItems value="#{userData.countries}" /> 
+         </h:selectOneMenu> 
+      </h:panelGrid> 
+   </h:form>
+         
+         
+         
+        
+        <br />
+        
+        
+        
+            
+        <h:button outcome="/carrito/List" value="#{msg['etiqueta1']}"/>
+        
+        <h:button outcome="/producto/List" value="#{msg['etiqueta2']}"/>
+       
+        <h:button outcome="/usuario/List" value="#{msg['etiqueta3']}"/>
+        
+        </center>
+        <center>
+        <br />
+        <img src="resources/css/download (4).jpg" width="600" height="413" alt="vinos_de_leyenda_3239_620x413"/>
+        </center>
+    </h:body>
+
+
+
+</html>
+

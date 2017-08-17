@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title><ui:insert name="title">Default Title</ui:insert></title>
+        <br></br>
+        <br></br>
+        <h:outputStylesheet library="css" name="jsfcrud.css"/>
+        <style type="text/css">
+            *{
+                padding: 0px;
+                margin: 0px;
+            }
+            #header{
+                margin: auto;
+                width: 500px;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            ul,ol{
+                list-style: none;
+            }
+            .nav li a{
+                background-color: #000;
+                color: #fff;
+                text-decoration: none;
+                padding: 10px 15px;
+                display: block;
+            }
+            .nav li a:hover{
+                background-color: #434343;
+            }
+            .nav > li{
+                float: left;
+            }
+            .nav li ul{
+                display: none;
+                position: absolute;
+                min-width: 140px;
+            }
+            .nav li:hover> ul{
+                display: block;
+            }
+            
+        </style>
+        
+    </h:head>
+    
+    
+    
+    
+    <h:body>
+        
+        <div id="header">
+            <title><ui:insert name="title">Default Title</ui:insert></title>
+            <ul class="nav">
+                <li><a href="index.xhtml">Inicio</a></li>
+                <li><a href="usuario.Create.xhtml">Registrar Usuario</a></li>
+                <li><a href="">Catálogo de productos</a></li>
+            </ul>
+        </div>
+        <br></br>
+        <br></br>
+        
+        <h:form>
+      <h3><h:outputText value="#{msg['etiqueta']}" /></h3>
+      <h:panelGrid columns="2"> 
+         Language : 
+         <h:selectOneMenu value="#{userData.locale}" onchange="submit()"
+            valueChangeListener="#{userData.localeChanged}">
+            <f:selectItems value="#{userData.countries}" /> 
+         </h:selectOneMenu> 
+      </h:panelGrid> 
+   </h:form>
+        
+        <h1>
+            <ui:insert name="title">Default Title</ui:insert>
+        </h1>
+        <p>
+            <ui:insert name="body">Default Body</ui:insert>
+        </p>
+        
+    </h:body>
+
+</html>

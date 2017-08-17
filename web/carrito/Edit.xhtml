@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <center>
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditCarritoTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditCarritoLabel_idCompra}" for="idCompra" />
+                    <h:inputText id="idCompra" value="#{carritoController.selected.idCompra}" title="#{bundle.EditCarritoTitle_idCompra}" required="true" requiredMessage="#{bundle.EditCarritoRequiredMessage_idCompra}"/>
+                    <h:outputLabel value="#{bundle.EditCarritoLabel_fkidUsuario}" for="fkidUsuario" />
+                    <h:inputText id="fkidUsuario" value="#{carritoController.selected.fkidUsuario}" title="#{bundle.EditCarritoTitle_fkidUsuario}" />
+                    <h:outputLabel value="#{bundle.EditCarritoLabel_fkidProducto}" for="fkidProducto" />
+                    <h:inputText id="fkidProducto" value="#{carritoController.selected.fkidProducto}" title="#{bundle.EditCarritoTitle_fkidProducto}" />
+                </h:panelGrid>
+                <h:commandButton action="#{carritoController.update}" value="#{bundle.EditCarritoSaveLink}"/>
+                <br />
+                <br />
+                <h:button outcome="View" value="#{bundle.EditCarritoViewLink}"/>
+                <br />
+                <h:commandButton action="#{carritoController.prepareList}" value="#{bundle.EditCarritoShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:button outcome="/index" value="#{bundle.EditCarritoIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+    </center>
+</html>
